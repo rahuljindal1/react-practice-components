@@ -13,6 +13,7 @@ import { tabConfig } from "./data/tab-view";
 import ModalContainer from "./components/Modal";
 import GithubFinder from "./components/GithubFinder";
 import AutoComplete from "./components/AutoComplete";
+import TicTacToe from "./components/TicTacToe";
 
 export default function Router() {
   const router = createBrowserRouter([
@@ -28,6 +29,7 @@ export default function Router() {
     { path: "/modal", element: <ModalContainer /> },
     { path: "/github-finder", element: <GithubFinder /> },
     { path: "/auto-complete", element: <AutoComplete /> },
+    { path: "/tic-tac-toe", element: <TicTacToe /> },
     { path: "*", element: <Accordion /> },
   ]);
 

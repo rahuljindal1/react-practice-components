@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 120px;
+  gap: 24px;
+}
+
+.gameArea {
+  .row {
+    display: flex;
+
+    .cell {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 80px;
+      width: 80px;
+      border: 1px solid red;
+      font-size: 28px;
+      font-weight: 600;
+    }
+  }
+}
+
+.instructionArea {
+  font-weight: 800;
+  font-size: 24px;
+}
+
+.actions {
+  button {
+    padding: 8px 16px;
+    font-size: 16px;
+  }
+}
