@@ -4,6 +4,7 @@ import { search } from "./db";
 import { useLocation } from "react-router-dom";
 import { debounce } from "../../utilities/debounce";
 import { useRef } from "react";
+import { throttle } from "../../utilities/throttle";
 
 export default function AutoComplete() {
   const location = useLocation();
@@ -11,6 +12,7 @@ export default function AutoComplete() {
   const [keyword, setKeyword] = useState("");
   const [filteredItems, setFilteredItems] = useState([]);
   const debouncedSearchHandlerRef = useRef();
+  const throttleSearchHandlerRef = useRef();
 
   const queryParams = new URLSearchParams(location.search);
   const searchType = queryParams.get("searchType") || "debounced";
@@ -29,6 +31,8 @@ export default function AutoComplete() {
     if (keyword) {
       if (searchType === "debounced") {
         debouncedSearchHandlerRef.current(keyword);
+      } else {
+        throttleSearchHandlerRef.current(keyword);
       }
     } else {
       setFilteredItems([]);
@@ -37,6 +41,7 @@ export default function AutoComplete() {
 
   useEffect(() => {
     debouncedSearchHandlerRef.current = debounce(searchHandler, 1000);
+    throttleSearchHandlerRef.current = throttle(searchHandler, 300);
   }, []);
 
   if (searchType !== "debounced" && searchType !== "throttle") {
