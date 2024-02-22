@@ -12,6 +12,7 @@ import TabView from "./components/TabView";
 import { tabConfig } from "./data/tab-view";
 import ModalContainer from "./components/Modal";
 import GithubFinder from "./components/GithubFinder";
+import AutoComplete from "./components/AutoComplete";
 
 export default function Router() {
   const router = createBrowserRouter([
@@ -26,6 +27,7 @@ export default function Router() {
     { path: "/tab-view", element: <TabView config={tabConfig} /> },
     { path: "/modal", element: <ModalContainer /> },
     { path: "/github-finder", element: <GithubFinder /> },
+    { path: "/auto-complete", element: <AutoComplete /> },
     { path: "*", element: <Accordion /> },
   ]);
 
