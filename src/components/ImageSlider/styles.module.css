@@ -1,0 +1,62 @@
+.container {
+  margin: 15% auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider {
+  height: 340px;
+  width: 480px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 12px 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.sliderImage {
+  height: 100%;
+  width: 100%;
+  opacity: 0.75;
+}
+
+.leftMove {
+  position: absolute;
+  top: 42%;
+  left: 20px;
+  font-size: 36px;
+  cursor: pointer;
+  color: white;
+}
+
+.rightMove {
+  position: absolute;
+  top: 42%;
+  right: 20px;
+  font-size: 36px;
+  cursor: pointer;
+  color: white;
+}
+
+.tracker {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  bottom: 28px;
+}
+
+.dot {
+  height: 14px;
+  width: 14px;
+  background: #808080d9;
+  border-radius: 100%;
+}
+
+.activeDot {
+  background: white;
+}

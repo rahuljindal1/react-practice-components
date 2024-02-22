@@ -1,0 +1,29 @@
+.container {
+  margin: 120px auto;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 24px;
+  word-wrap: break-word;
+}
+
+.listContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.typeSelector {
+  width: 300px;
+  font-size: 20px;
+  background-color: burlywood;
+  border: none;
+  padding: 16px 28px;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+}

@@ -1,0 +1,57 @@
+.container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 7.5%;
+  flex-direction: column;
+  gap: 24px;
+  height: 100%;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.qrForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+
+.qrValue {
+  padding: 8px;
+  font-size: 18px;
+  width: 500px;
+}
+
+.output {
+  padding: 12px;
+  border: 2px solid black;
+}
+
+.qrGeneratorBtn {
+  padding: 8px 12px;
+  font-size: 18px;
+  background-color: cadetblue;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+}
+
+.darkTheme {
+  &.container {
+    background-color: black;
+  }
+  .title {
+    color: white;
+  }
+  .output {
+    background-color: white;
+  }
+  div {
+    color: white;
+  }
+}

@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalBtn {
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 12px;
+  background-color: aquamarine;
+  border: none;
+  cursor: pointer;
+}
+
+.modalBtn:hover {
+  background-color: rgb(85, 247, 193);
+}

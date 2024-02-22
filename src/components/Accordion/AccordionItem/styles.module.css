@@ -1,0 +1,23 @@
+.container {
+  padding: 16px 24px;
+  background-color: burlywood;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all ease-in 0.5;
+}
+
+.titleContainer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.description {
+  font-size: 16px;
+  text-align: center;
+}

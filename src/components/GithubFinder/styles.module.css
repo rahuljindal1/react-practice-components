@@ -1,0 +1,60 @@
+.container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  gap: 24px;
+  padding-top: 24px;
+
+  .title {
+    font-size: 32px;
+    font-weight: bold;
+  }
+
+  .mainSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+
+    .searchContainer {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+
+      input {
+        font-size: 18px;
+        width: 400px;
+        padding: 12px;
+        background-color: white;
+        border-radius: 12px;
+        border: 2px solid cadetblue;
+
+        &:focus-visible {
+          outline: 0.75px solid cadetblue;
+        }
+      }
+
+      button {
+        background-color: cadetblue;
+        padding: 16px 24px;
+        border-radius: 12px;
+        font-size: 16px;
+        border: none;
+        color: white;
+        font-weight: 600;
+        cursor: pointer;
+
+        &:disabled {
+          opacity: 0.75;
+          cursor: not-allowed;
+        }
+
+        &:hover {
+          background-color: rgb(61, 156, 159);
+        }
+      }
+    }
+  }
+}

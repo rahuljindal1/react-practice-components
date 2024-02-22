@@ -1,0 +1,43 @@
+.container,
+.scrollContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+.scrollContainer {
+  position: fixed;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  color: white;
+  background-color: green;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  width: 100%;
+  text-align: center;
+}
+
+.progressBar {
+  height: 12px;
+  width: 100%;
+  background-color: greenyellow;
+}
+
+.filled {
+  height: 12px;
+  background-color: rgb(83, 129, 14);
+  transition: all 0.2s ease-in;
+}
+
+.data {
+  margin-top: 96px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}

@@ -1,0 +1,40 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding-left: 120px;
+  gap: 60px;
+}
+
+.content {
+  font-size: 36px;
+}
+
+.changeThemeBtn {
+  width: fit-content;
+  padding: 8px 12px;
+  font-size: 16px;
+  background-color: black;
+  border: 1px solid black;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.darkTheme {
+  &.container {
+    background-color: black;
+  }
+
+  .content {
+    color: white;
+  }
+
+  .changeThemeBtn {
+    background-color: white;
+    border: 1px solid white;
+    color: black;
+  }
+}
