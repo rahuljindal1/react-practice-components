@@ -14,6 +14,7 @@ import ModalContainer from "./components/Modal";
 import GithubFinder from "./components/GithubFinder";
 import AutoComplete from "./components/AutoComplete";
 import TicTacToe from "./components/TicTacToe";
+import HooksTest from "./components/HooksTest";
 
 export default function Router() {
   const router = createBrowserRouter([
@@ -30,6 +31,7 @@ export default function Router() {
     { path: "/github-finder", element: <GithubFinder /> },
     { path: "/auto-complete", element: <AutoComplete /> },
     { path: "/tic-tac-toe", element: <TicTacToe /> },
+    { path: "/hooks-test", element: <HooksTest /> },
     { path: "*", element: <Accordion /> },
   ]);
 
