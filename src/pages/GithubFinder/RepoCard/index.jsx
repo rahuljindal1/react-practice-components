@@ -1,4 +1,4 @@
-import RepoCardItem from "./RepoCardItem.jsx";
+import RepoCardItem from "./RepoCardItem.jsx/index.jsx";
 import classes from "./styles.module.css";
 
 export default function RepoCard({ repos }) {

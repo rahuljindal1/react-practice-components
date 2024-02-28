@@ -1,6 +1,6 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Accordion from "./components/Accordion";
-import ColorGenerator from "./components/ColorGenerator";
+import ColorGenerator from "./pages/ColorGenerator";
 import Rating from "./components/Rating";
 import ImageSlider from "./components/ImageSlider";
 import { treeViewConfig } from "./data/tree-view";
@@ -11,10 +11,10 @@ import CustomScrollIndicator from "./components/CustomScrollIndicator";
 import TabView from "./components/TabView";
 import { tabConfig } from "./data/tab-view";
 import ModalContainer from "./components/Modal";
-import GithubFinder from "./components/GithubFinder";
+import GithubFinder from "./pages/GithubFinder";
 import AutoComplete from "./components/AutoComplete";
-import TicTacToe from "./components/TicTacToe";
-import HooksTest from "./components/HooksTest";
+import TicTacToe from "./pages/TicTacToe";
+import HooksTest from "./pages/HooksTest";
 import ScrollToPosition from "./components/ScrollToPosition";
 
 export default function Router() {
