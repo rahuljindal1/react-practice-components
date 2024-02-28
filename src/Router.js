@@ -15,6 +15,7 @@ import GithubFinder from "./components/GithubFinder";
 import AutoComplete from "./components/AutoComplete";
 import TicTacToe from "./components/TicTacToe";
 import HooksTest from "./components/HooksTest";
+import ScrollToPosition from "./components/ScrollToPosition";
 
 export default function Router() {
   const router = createBrowserRouter([
@@ -32,6 +33,7 @@ export default function Router() {
     { path: "/auto-complete", element: <AutoComplete /> },
     { path: "/tic-tac-toe", element: <TicTacToe /> },
     { path: "/hooks-test", element: <HooksTest /> },
+    { path: "/scroll-to-position", element: <ScrollToPosition /> },
     { path: "*", element: <Accordion /> },
   ]);
 
