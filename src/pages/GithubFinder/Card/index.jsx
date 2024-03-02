@@ -1,12 +1,36 @@
-import { useEffect, useState } from "react";
+import { useEffect, useReducer } from "react";
 import RepoCard from "../RepoCard";
 import classes from "./styles.module.css";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { searchUserPublicRepos } from "../db";
 
+const initialRepoState = {
+  repos: [],
+  showRepos: false,
+};
+
+const repoActions = {
+  SET_REPOS: "set_repos",
+  SET_SHOW_REPOS: "set_show_repos",
+};
+
+const repoReducer = (state, action) => {
+  switch (action.type) {
+    case repoActions.SET_SHOW_REPOS:
+      return {
+        ...state,
+        showRepos:
+          action.payload !== undefined ? action.payload : !state.showRepos,
+      };
+    case repoActions.SET_REPOS:
+      return { ...state, repos: action.payload };
+    default:
+  }
+};
+
 export default function Card({ user }) {
-  const [repos, setRepos] = useState([]);
-  const [showRepos, setShowRepos] = useState(false);
+  const [repoState, dispatch] = useReducer(repoReducer, initialRepoState);
+  console.log(repoState);
 
   const visitRepo = () => {
     window.open(user.html_url, "_blank");
@@ -18,26 +42,26 @@ export default function Card({ user }) {
   };
 
   const publicReposClickHandler = async () => {
-    if (!showRepos) {
+    if (!repoState.showRepos) {
       await getUserPublicRepos();
     } else {
-      setRepos([]);
+      dispatch({ type: repoActions.SET_REPOS, payload: [] });
     }
-    setShowRepos((prevState) => !prevState);
+    dispatch({ type: repoActions.SET_SHOW_REPOS });
   };
 
   const getUserPublicRepos = async () => {
     try {
       const userRepos = await searchUserPublicRepos(user.login);
-      setRepos(userRepos);
+      dispatch({ type: repoActions.SET_REPOS, payload: userRepos });
     } catch (error) {
-      setRepos([]);
+      dispatch({ type: repoActions.SET_REPOS, payload: [] });
     }
   };
 
   useEffect(() => {
-    setShowRepos(false);
-    setRepos([]);
+    dispatch({ type: repoActions.SET_SHOW_REPOS, payload: false });
+    dispatch({ type: repoActions.SET_REPOS, payload: [] });
   }, [user.login]);
 
   return (
@@ -56,7 +80,9 @@ export default function Card({ user }) {
           <div className={classes.statsContainer}>
             <div
               onClick={publicReposClickHandler}
-              className={`${classes.stat} ${showRepos ? classes.active : ""}`}
+              className={`${classes.stat} ${
+                repoState.showRepos ? classes.active : ""
+              }`}
             >
               <div className={classes.statName}>Public Repos</div>
               <div className={classes.statValue}>{user.public_repos || 0}</div>
@@ -73,11 +99,11 @@ export default function Card({ user }) {
           <div>User joined on {<b>{formatDate(user.created_at)}</b>}</div>
         </div>
       </div>
-      {showRepos && (
+      {repoState.showRepos && (
         <>
           <div className={classes.separator} />
           <div className={classes.reposCard}>
-            <RepoCard repos={repos} />
+            <RepoCard repos={repoState.repos} />
           </div>
         </>
       )}
